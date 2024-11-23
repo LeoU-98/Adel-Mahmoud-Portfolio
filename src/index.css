@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .menu-item::before {
+    content: '';
+    width: 1%;
+    height: 0.1rem;
+    background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: all 0.3s ease;
+  }
+
+  .menu-item:hover::before {
+    width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .moving-caret {
+    position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+
+  /* Animation  */
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .typed-out {
+    overflow: hidden;
+    /* border-right: 0.1em solid white; */
+    white-space: nowrap;
+    font-size: 1.6rem;
+    width: 0;
+    animation: 1.5s steps(30, end) forwards typing;
+  }
+
+  /* Animation  Side Nav*/
+
+  @keyframes sliding {
+    from {
+      transform: translateX(-180px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-sliding {
+    animation: sliding 0.5s forwards;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 115%;
+  }
+}
+
+/* ///////////////////////////////////////////
+ */
+
+.proj-imgbx::before {
+  content: '';
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.proj-imgbx:hover::before {
+  height: 100%;
+}
+
+/* ///////////////////////////////// */
+
+.glow-on-hover {
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* ////////////////////////////////////////////////// */
+
+.contact-me-hover {
+  color: #fff;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #6d28d9 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(45deg, #6d28d9 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease-in-out;
+  transition: background 600ms ease-in-out;
+}
+.contact-me-hover:hover {
+  background-position: 0;
+}
+
+/* ////////////////////////// */
+
+.contact-bg-gradient {
+  background-image: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+}
+
+/* ///////////////////////////////////////////////// */
+
+/*////////////////////////*/
+/*   scroll bar styling   */
+/*////////////////////////*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #c8c8c8; */
+  background-image: linear-gradient(#7c3aed, #4c1d95);
+  /* background-image: linear-gradient(#aa367c, #4a2fbd); */
+
+  border-radius: 4px;
+  transition-duration: 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(#aa367c, #4a2fbd);
+}
+
+/* //////////////////////////// */
