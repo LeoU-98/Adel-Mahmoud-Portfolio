@@ -1,6 +1,5 @@
 import myImage from '../images/myPic/5.jpg';
 import bannerBg from '../images/banner-bg.png';
-import cv from '../utils/Adel Mahmoud _CV.pdf';
 
 import TechIcon from './TechIcon';
 import html from '../images/icons/html.png';
@@ -36,7 +35,7 @@ function Hero() {
           </p>
 
           <a
-            href={cv}
+            href="/Adel_Mahmoud_DotNet_Developer_CV..pdf"
             download
             className="mt-5 block rounded-xl bg-violet-700 px-4 py-2 text-xs font-semibold text-white duration-300 hover:bg-black active:translate-y-2 sm:text-sm"
           >
